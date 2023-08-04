@@ -1,0 +1,9 @@
+{
+    "name": "musify",
+    "version": "0.1.0",
+    "main": "index.js",
+    "repository": "git@github.com:MrDigii/musify.git",
+    "author": "MrDigii <strandlaefer@googlemail.com>",
+    "license": "MIT",
+    "private": true
+}
