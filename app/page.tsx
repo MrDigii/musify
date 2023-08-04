@@ -1,9 +1,11 @@
-import Image from 'next/image';
+import React from 'react';
+import AppLayout from './components/base/AppLayout';
+import LoginForm from './components/blocks/LoginForm';
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            Musify
-        </main>
+        <AppLayout>
+            <LoginForm />
+        </AppLayout>
     );
 }
