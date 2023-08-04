@@ -4,6 +4,7 @@
     "repository": "git@github.com:MrDigii/musify.git",
     "author": "MrDigii <strandlaefer@googlemail.com>",
     "private": false,
+    "license": "MIT",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
