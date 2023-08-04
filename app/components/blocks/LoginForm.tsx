@@ -1,41 +1,124 @@
 'use client';
-import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import * as Tabs from '@radix-ui/react-tabs';
 import { FC } from 'react';
 
 const LoginForm: FC = () => {
     return (
-        <AlertDialog.Root>
-            <AlertDialog.Trigger asChild>
-                <button className="text-violet11 hover:bg-mauve3 shadow-blackA7 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-white px-[15px] font-medium leading-none shadow-[0_2px_10px] outline-none focus:shadow-[0_0_0_2px] focus:shadow-black">
-                    Delete account
-                </button>
-            </AlertDialog.Trigger>
-            <AlertDialog.Portal>
-                <AlertDialog.Overlay className="bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0" />
-                <AlertDialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
-                    <AlertDialog.Title className="text-mauve12 m-0 text-[17px] font-medium">
-                        Are you absolutely sure?
-                    </AlertDialog.Title>
-                    <AlertDialog.Description className="text-mauve11 mt-4 mb-5 text-[15px] leading-normal">
-                        This action cannot be undone. This will permanently
-                        delete your account and remove your data from our
-                        servers.
-                    </AlertDialog.Description>
-                    <div className="flex justify-end gap-[25px]">
-                        <AlertDialog.Cancel asChild>
-                            <button className="text-mauve11 bg-mauve4 hover:bg-mauve5 focus:shadow-mauve7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-                                Cancel
-                            </button>
-                        </AlertDialog.Cancel>
-                        <AlertDialog.Action asChild>
-                            <button className="text-red11 bg-red4 hover:bg-red5 focus:shadow-red7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-                                Yes, delete account
-                            </button>
-                        </AlertDialog.Action>
-                    </div>
-                </AlertDialog.Content>
-            </AlertDialog.Portal>
-        </AlertDialog.Root>
+        <Tabs.Root
+            className="flex flex-col w-[300px] shadow-[0_2px_10px] shadow-blackA4"
+            defaultValue="tab1"
+        >
+            <Tabs.List
+                className="shrink-0 flex border-b border-mauve6"
+                aria-label="Manage your account"
+            >
+                <Tabs.Trigger
+                    className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-violet11 data-[state=active]:text-violet11 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative data-[state=active]:focus:shadow-[0_0_0_2px] data-[state=active]:focus:shadow-black outline-none cursor-default"
+                    value="tab1"
+                >
+                    Account
+                </Tabs.Trigger>
+                <Tabs.Trigger
+                    className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-mauve11 select-none first:rounded-tl-md last:rounded-tr-md hover:text-violet11 data-[state=active]:text-violet11 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative data-[state=active]:focus:shadow-[0_0_0_2px] data-[state=active]:focus:shadow-black outline-none cursor-default"
+                    value="tab2"
+                >
+                    Password
+                </Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content
+                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+                value="tab1"
+            >
+                <p className="mb-5 text-mauve11 text-[15px] leading-normal">
+                    Make changes to your account here. Click save when
+                    you&apos;re done.
+                </p>
+                <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+                    <label
+                        className="text-[13px] leading-none mb-2.5 text-violet12 block"
+                        htmlFor="name"
+                    >
+                        Name
+                    </label>
+                    <input
+                        className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
+                        id="name"
+                        defaultValue="Pedro Duarte"
+                    />
+                </fieldset>
+                <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+                    <label
+                        className="text-[13px] leading-none mb-2.5 text-violet12 block"
+                        htmlFor="username"
+                    >
+                        Username
+                    </label>
+                    <input
+                        className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
+                        id="username"
+                        defaultValue="@peduarte"
+                    />
+                </fieldset>
+                <div className="flex justify-end mt-5">
+                    <button className="inline-flex items-center justify-center rounded px-[15px] text-[15px] leading-none font-medium h-[35px] bg-green4 text-green11 hover:bg-green5 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default">
+                        Save changes
+                    </button>
+                </div>
+            </Tabs.Content>
+            <Tabs.Content
+                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+                value="tab2"
+            >
+                <p className="mb-5 text-mauve11 text-[15px] leading-normal">
+                    Change your password here. After saving, you&apos;ll be
+                    logged out.
+                </p>
+                <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+                    <label
+                        className="text-[13px] leading-none mb-2.5 text-violet12 block"
+                        htmlFor="currentPassword"
+                    >
+                        Current password
+                    </label>
+                    <input
+                        className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
+                        id="currentPassword"
+                        type="password"
+                    />
+                </fieldset>
+                <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+                    <label
+                        className="text-[13px] leading-none mb-2.5 text-violet12 block"
+                        htmlFor="newPassword"
+                    >
+                        New password
+                    </label>
+                    <input
+                        className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
+                        id="newPassword"
+                        type="password"
+                    />
+                </fieldset>
+                <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+                    <label
+                        className="text-[13px] leading-none mb-2.5 text-violet12 block"
+                        htmlFor="confirmPassword"
+                    >
+                        Confirm password
+                    </label>
+                    <input
+                        className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
+                        id="confirmPassword"
+                        type="password"
+                    />
+                </fieldset>
+                <div className="flex justify-end mt-5">
+                    <button className="inline-flex items-center justify-center rounded px-[15px] text-[15px] leading-none font-medium h-[35px] bg-green4 text-green11 hover:bg-green5 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default">
+                        Change password
+                    </button>
+                </div>
+            </Tabs.Content>
+        </Tabs.Root>
     );
 };
 
