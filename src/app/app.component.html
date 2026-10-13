@@ -11,11 +11,25 @@
     </div>
     <p>Click on the logos to learn more about the frameworks</p>
 
+    <!--
     <form class="row" (submit)="greet($event, greetInput.value)">
-        <input #greetInput id="greet-input" placeholder="Enter a name..." />
+        <input #greetInput id="greet-input" placeholder="{{ inputPlaceholder }}" />
         <button z-button type="submit">Greet</button>
     </form>
+    -->
     <p>{{ greetingMessage }}</p>
+
+    <button z-button type="button" (click)="selectFolder()">Ordner auswählen</button>
+    @if (selectedFolder) {
+    <p>{{ selectedFolder }}</p>
+    <ul>
+        @for (file of files; track file) {
+        <li>{{ file }}</li>
+        } @empty {
+        <li>Keine Dateien gefunden</li>
+        }
+    </ul>
+    }
 
     <router-outlet />
 </main>
