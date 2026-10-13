@@ -10,23 +10,33 @@
     },
     "private": true,
     "dependencies": {
+        "@angular/cdk": "^20",
         "@angular/common": "^20.1.4",
         "@angular/compiler": "^20.1.4",
         "@angular/core": "^20.1.4",
         "@angular/forms": "^20.1.4",
         "@angular/platform-browser": "^20.1.4",
         "@angular/router": "^20.1.4",
-        "rxjs": "~7.8.2",
-        "tslib": "^2.8.1",
-        "zone.js": "~0.15.1",
+        "@ng-icons/core": "^32",
+        "@ng-icons/lucide": "^32",
+        "@tailwindcss/postcss": "^4.3.3",
         "@tauri-apps/api": "^2",
-        "@tauri-apps/plugin-opener": "^2"
+        "@tauri-apps/plugin-opener": "^2",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "postcss": "^8.5.30",
+        "rxjs": "~7.8.2",
+        "tailwind-merge": "^3.7.0",
+        "tailwindcss": "^4.3.3",
+        "tslib": "^2.8.1",
+        "zone.js": "~0.15.1"
     },
     "devDependencies": {
         "@angular/build": "^20.1.4",
         "@angular/cli": "^20.1.4",
         "@angular/compiler-cli": "^20.1.4",
         "@tauri-apps/cli": "^2",
+        "tailwindcss-animate": "^1.0.7",
         "typescript": "~5.8.3"
     }
 }
